@@ -1,7 +1,7 @@
 {
-  "name": "todolistapi",
+  "name": "skill-endorse-backend",
   "version": "1.0.0",
-  "description": "RESTful todoListApi",
+  "description": "skill-endorse-backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,19 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/generalgmt/RESTfulAPITutorial.git"
+    "url": "git+https://github.com/mayanktg/skill-endorse-backend.git"
   },
   "keywords": [
-    "RESTful",
-    "API",
-    "Tutorial"
+    "skill",
+    "endorser"
   ],
-  "author": "olatunde garuba",
-  "license": "ISC",
+  "author": "Mayank Kumar",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/generalgmt/RESTfulAPITutorial/issues"
+    "url": "git+https://github.com/mayanktg/skill-endorse-backend/issues"
   },
-  "homepage": "https://github.com/generalgmt/RESTfulAPITutorial#readme",
+  "homepage": "git+https://github.com/mayanktg/skill-endorse-backend#readme",
   "devDependencies": {
     "nodemon": "^1.11.0"
   },
