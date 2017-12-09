@@ -1,19 +1,17 @@
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 3000,
-  mongoose = require('mongoose'),
-  Task = require('./api/models/todoListModel'),
-  bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+var port = process.env.PORT || 9000;
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+var config = require('./config/config');
+var routes = require('./server/routes');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb');
-
+mongoose.connect(config.mongo_url);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
-var routes = require('./api/routes/todoListRoutes');
 routes(app);
 
 app.use(function(req, res) {
