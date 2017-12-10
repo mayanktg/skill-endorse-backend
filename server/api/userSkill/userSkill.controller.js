@@ -29,7 +29,17 @@ userSkill.getSkillByUserId = function(req, res) {
       if (!skills) {
         throw { 'code': ErrorCodes.dbNotFound , field: 'skills_not_found' };
       }
-      return Success.successResponse(res, skills, 200);
+      const skillsMerged = {};
+      skills.map(function(skill) {
+        if (!skillsMerged[skill.skill_id.name]) skillsMerged[skill.skill_id.name] = [];
+        skillsMerged[skill.skill_id.name].push({
+          skill_id: skill.skill_id._id,
+          user_id: skill.endorser_user_id.user_id,
+          name: skill.endorser_user_id.name,
+          photo: skill.endorser_user_id.photo
+        });
+      })
+      return Success.successResponse(res, skillsMerged, 200);
     })
     .catch(function (err) {
       return Success.handleError(res, err);

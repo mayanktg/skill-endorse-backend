@@ -9,7 +9,7 @@ var skillsDmLayer = {};
 
 skillsDmLayer.getAll = function() {
   var query = {};
-  var requiredFields = 'name';
+  var requiredFields = 'name __v';
   return DbaSkills.find(query, requiredFields);
 }
 

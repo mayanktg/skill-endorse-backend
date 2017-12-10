@@ -18,6 +18,7 @@ var auth = {};
 
 auth.login = function(req, res) {
   var body = req.body;
+  console.log(body);
   var userId = body.user_id;
   var password = body.password;
 
@@ -100,7 +101,7 @@ auth.createUser = function(req, res) {
 };
 
 auth.updateUser = function(req, res) {
-  var params = req.body;
+  var params = req.params;
   var body = req.body;
   var userId = params.user_id;
   var name = body.name;

@@ -9,7 +9,7 @@ var CustomerUserSchema = new Schema({
     email: { type: String, unique: true, required: true },
     pass_salt: { type: String, required: true },
     photo: { type: String },
-    skills: [ { type: mongoose.Schema.Types.ObjectId, ref: 'UserSkill'} ]
+    skills: [ { type: mongoose.Schema.Types.ObjectId, ref: 'Skill'} ]
   });
 
 CustomerUserSchema.index({

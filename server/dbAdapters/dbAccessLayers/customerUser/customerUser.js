@@ -11,7 +11,8 @@ Promise.promisifyAll(CustomerUser);
 var customerUser = {};
 
 customerUser.findOne = function(query, requiredKeys) {
-  return CustomerUser.findOneAsync(query, requiredKeys);
+  return CustomerUser.findOne(query, requiredKeys)
+    .populate('skills');
 }
 
 customerUser.create = function(query) {
